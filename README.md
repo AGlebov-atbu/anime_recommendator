@@ -53,6 +53,7 @@ This file contains following functions:
 ### **Reflection**
 I enjoyed making this project come to live, and I really appreciate the opportunity that I was given.  
 I like this program, and I may update it in the future.  
+In my opinion, the logic that I built here is very simple, so I really want to improve it!
 
 ---
 ### **Credits**
