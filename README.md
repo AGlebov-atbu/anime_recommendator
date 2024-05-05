@@ -18,7 +18,7 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
         - If we need to randomly select favorite genres.
         - If we need to make recommendation list taking into account other parameters (such as age or gender).
 - **What can this program be used for?**  
-    - Theoretically, this program can be used on a website which will provide dinamical databases of the existing anime and the user's profile. Program can be connected to a website so that it can borrow the new information about constantly updating anime ratings - it will always be able to suggest new anime to watch.
+    - Theoretically, this program can be used on a website with dinamical databases of the existing anime and the user's profile. Program can be connected to a website so that it can borrow the new information about constantly updating anime ratings - it will always be able to suggest new anime to watch.
 
 ---
 ### **The anime recommendator consists of 3 main coding parts that are located in *src* directory:**
