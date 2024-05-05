@@ -18,8 +18,8 @@ fn main() {
 
     println!("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------------------------");
     // File names for anime.csv and profile.csv.
-    let file_anime = "animes.csv";       // Do not change this file name.
-    let file_profiles = "profiles.csv"; // Do not change this file name.
+    let file_anime = "databases/animes.csv";       // Do not change this file name.
+    let file_profiles = "databases/profiles.csv"; // Do not change this file name.
 
     // Some profile name.
     // Next to this line there are some commented names that you can test the program with.
