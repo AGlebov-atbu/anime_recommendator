@@ -13,7 +13,7 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 - [Files and functions](#filesandfunctions)
 - [Reflection](#reflection)
 - [Credits](#credits)
-- [Final nots](#finalnotes)
+- [Final notes](#finalnotes)
 ---
 ## <a id="about">**This project was made by Aleksei Glebov (also known as Keysella) for DS 210 class at Boston University.**</a>
 
