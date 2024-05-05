@@ -12,7 +12,7 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 - **What was done in this project?**  
     - Basic logic to construct the anime recommendation list for a concrete user.
     - Program uses two databases and assumes that user with a provided name exists.
-    - Database ***animes.csv*** was changed and filtered in a way that suits my project.
+    - Database ***animes.csv*** was changed and filtered in a way that suits the project.
 - **What can be improved in this project?**  
     - The recommendation logic can be improved in such a way:  
         - If we need to randomly select favorite genres.
