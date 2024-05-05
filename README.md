@@ -53,7 +53,10 @@ This file contains following functions:
 ### **Reflection**
 I enjoyed making this project come to live, and I really appreciate the opportunity that I was given.  
 I like this program, and I may update it in the future.  
-While completing this project I used these resources:
+
+---
+### **Credits**
+While completing this project I used the following resources:
 - DS 210 lecture notes;
 - DS 210 Homeworks;
 - My project proposal;
