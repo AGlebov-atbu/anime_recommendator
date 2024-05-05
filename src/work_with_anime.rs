@@ -142,10 +142,17 @@ pub fn mk_topfive_from_nothing(file_name: &str) -> Vec<String> {
     return topfive;
 }
 
+// This is my mk_topfive() function!
+// This function makes a top five anime that a user should consider watching.
+// The logic of this function right now is very simple - it tries to find highly rated anime,
+// which a user does not have on the favorite anime list, and which contains the genres of user's favorite anime.
 pub fn mk_topfive(favorite_anime_list: &Vec<i32>, favorite_genres: &Vec<Genre>, file_name: &str) -> Vec<String> {
+    // Prepare the final vector for topfive anime.
     let mut topfive: Vec<String> = Vec::new();
 
     // We want to cut favorite genres so that we use only those which appeared the most times on the list.
+    // Since the list of genres is already sorted in the descending order - we can simply take first five
+    // and they will be considered as user's favorite genres.
     let mut fav_genres: Vec<Genre> = Vec::new();
     if favorite_genres.len() > 5 {
         for i in 0..5 {
@@ -153,27 +160,32 @@ pub fn mk_topfive(favorite_anime_list: &Vec<i32>, favorite_genres: &Vec<Genre>, 
         }
     }
 
+    // Read the file.
     let file = File::open(file_name).expect("Could not open file.");
     let buf_reader = BufReader::new(file);
     let lines = buf_reader.lines();
 
+    // Start searching for the anime.
     for line in lines {
         let line_str = line.unwrap();
         let fields: Vec<String> = line_str.trim().split(';').map(|s| s.trim().to_string()).collect();
 
-        // Extract anime ID and name from the line
+        // Extract anime id and name from the line.
         let anime_id = match fields[0].parse::<i32>() {
             Ok(id) => id,
-            Err(_) => continue, // Skip this line if ID cannot be parsed as integer
+            // Skip the first line.
+            Err(_) => continue,
         };
-        let anime_name = fields[1].clone(); // Assuming the anime name is the second field
+        // We know for sure that the anime name is in the second column, so:
+        let anime_name = fields[1].clone();
 
-        // Check if the anime is in the favorite anime list
+        // Check if user has already watched this anime.
+        // If the anime is in the favorite list - we skip it.
         if favorite_anime_list.contains(&anime_id) {
-            continue; // Skip this anime if it's in the favorite anime list
+            continue;
         }
 
-        // Check if the anime belongs to one of the favorite genres
+        // Check if anime contains one of the favorite genres.
         let mut found_genre = false;
         for genre in &fav_genres {
             if line_str.contains(&genre.genre_name) {
@@ -181,15 +193,19 @@ pub fn mk_topfive(favorite_anime_list: &Vec<i32>, favorite_genres: &Vec<Genre>, 
                 break;
             }
         }
+        // Skip this anime if it doesn't contain any favorite genres.
         if !found_genre {
-            continue; // Skip this anime if it doesn't belong to any of the favorite genres
+            continue;
         }
 
-        // Insert the anime into the topfive vector if it meets all conditions
+        // Add the anime to our topfive vector. The order is descending automatically,
+        // because the database is filtered by rating in a descending order,
+        // and we check animes from top to bottom.
         if topfive.len() < 5 {
             topfive.push(anime_name);
         }
     }
 
+    // Return the final top.
     return topfive;
 }
