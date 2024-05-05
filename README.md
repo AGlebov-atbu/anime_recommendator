@@ -15,9 +15,9 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 - **What can be improved in this project?**  
     - The recommendation logic can be improved in such a way:  
         - If we need to randomly select favorite genres.
-        - If we need to make recommendation list taking intop account other parameters (such as age or gender).
+        - If we need to make recommendation list taking into account other parameters (such as age or gender).
 - **What can this program be used for?**  
-    - Theoretically, this program can be used on a website which will provide dinamical databases of the existing anime and the user's profile. If we work on that program, we can connect it so that it can borrow the new information and constantly updating anime ratings - so that it can always suggest new anime to watch.
+    - Theoretically, this program can be used on a website which will provide dinamical databases of the existing anime and the user's profile. Program can be connected to a website so that it can borrow the new information about constantly updating anime ratings - it will always be able to suggest new anime to watch.
 
 ---
 ### **The anime recommendator consists of 3 main coding parts that are located in src directory:**
@@ -48,4 +48,22 @@ This file contains following functions:
     - ***mk_topfive_from_nothing()*** - this function is used in a case when user does not have the favorite anime list. It will simply return the names of the most popular animes at the current time.
     - ***mk_topfive()*** - this is the most important function that contains the logic to construct the recommendation list. This logic can be improved or changed in a way that is asked, but for now it builds the recommendation list based on the genres that user's favorite anime contain.
 
-> I started working on this project on May 1, but I didn't commit anything on GitHub until May 5 3 pm when I saw on Gradescope that I must do that. The only evidence I have which concludes that I started this project not on the last day - is my Piazza post @461, where I asked if I can change my data files a little bit. I worked on this project for 5 days, and I have my full project proposal submitted on Gradescope that describes my project's details in a two-page document. Since I realized I need to show the commit history - I started the commit history from updating the README.md file, and if I have some time I will also improve my functions.
+---
+### **Reflection**
+I enjoyed making this project come to live, and I really appreciate the opportunity that I was given.  
+I like this program, and I may update it in the future.  
+While completing this project I used these resources:
+- DS 210 lecture notes;
+- DS 210 Homeworks;
+- My project proposal;
+- rust-lang.org;
+- stackoverflow.com;
+- chat.openai.com;
+- youtube.com.
+
+---
+### **Final notes**
+> There are two user's accounts on this project listed in "Contributors" section. I don't know how this happend, but my another account "Keysella" was added there. I think the problem was that I was pushing my files to github while working on my personal computer that has this account as the prior one.  
+Aleksei Glebov and "Keysella" is one person, I didn't cheat while working on this project, and I did everything by myself. I have other accounts on social media named Keysella that can prove my identity.  
+
+> I started working on this project on May 1, but I didn't commit anything on GitHub until May 5, 3 am when I saw on Gradescope that I must do that. The only evidence I have which concludes that I started this project not on the last day - is my Piazza post @461, where I asked if I can change my data files a little bit. I worked on this project for 5 days, and I have my full project proposal submitted on Gradescope that describes my project's details in a two-page document. Since I realized I need to show the commit history - I started the commit history from updating the README.md file, and if I have some time I will also improve my functions.
