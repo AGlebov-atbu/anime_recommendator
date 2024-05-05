@@ -71,6 +71,15 @@ fn main() {
 
         println!("------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
+        // Construct a genre list, that will have all the genres with the appropriate counting for each genre in the anime list of a user.
+        // In easier words, count the unique genres.
+        let genre_list = work_with_anime::make_genres_list(&favorite_anime_list, file_anime);
+        let mut counted_genres = work_with_anime::genres_counter(&genre_list);
+        // Sort favorite genres by their appearance in the list in a descending order.
+        counted_genres.sort_by(|a, b| b.counter.cmp(&a.counter));
+
+
+
         // (!!!)
         // See the genres of each anime
         // (uncomment this section to see them).
@@ -83,15 +92,6 @@ fn main() {
         //     println!("{:?}", genres);
         // }
         // println!("------------------------------------------------------------------------------------------------------------------------------------------------------------");
-
-
-        // Construct a genre list, that will have all the genres with the appropriate counting for each genre in the anime list of a user.
-        // In easier words, count the unique genres.
-        let genre_list = work_with_anime::make_genres_list(&favorite_anime_list, file_anime);
-        let mut counted_genres = work_with_anime::genres_counter(&genre_list);
-        // Sort favorite genres in a descending order.
-        counted_genres.sort_by(|a, b| b.counter.cmp(&a.counter));
-
 
         // (!!!)
         // Here you can take a look at the list with counter
@@ -113,9 +113,12 @@ fn main() {
         // }
         // println!("------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        println!("Here is your top of five anime that you should try watching!\n");
 
+
+        println!("Here is your top of five anime that you should try watching!\n");
+        // Use mk_topfive() function to complete the topfive recommended anime.
         let topfive = work_with_anime::mk_topfive(&favorite_anime_list, &counted_genres, file_anime);
+        // Print the top.
         for i in 0..5 {
             println!("   {})   {}", (i + 1), topfive[i]);
         }
