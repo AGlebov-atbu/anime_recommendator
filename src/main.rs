@@ -163,4 +163,25 @@ mod tests {
         // This order is descending: from most popular to less popular.
         assert_eq!(regular_topfive, ["Death Note", "Shingeki no Kyojin", "Sword Art Online", "Fullmetal Alchemist: Brotherhood", "One Punch Man"]);
     }
+
+    // This function tests the work of find_profile() function.
+    // find_profile() function should return the vector of strings representing the profile data.
+    #[test]
+    fn test_profile_function() {
+        // File name for profiles.csv.
+        let file_profiles = "databases/profiles.csv";
+        // Fill the username.
+        let username = "shadowsplat";
+
+        // Get profile's information.
+        let profile = work_with_profile::find_profile(file_profiles, username);
+
+        // shadowsplat is a user with an empty profile.
+        // The only information we know about this user is:
+        //      - the name of the account - shadowsplat;
+        //      - the link to the account - https://myanimelist.net/profile/shadowsplat
+        // We don't know anything else about him, so all the fields between this information should be empty
+        // (for the account we have a concrete order: [0]username, [1]gender, [2]birthday, [3]favoriteanime, [4]url).
+        assert_eq!(profile, ["shadowsplat", "", "", "", "https://myanimelist.net/profile/shadowsplat"]);
+    }
 }
