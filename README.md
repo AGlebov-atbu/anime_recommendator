@@ -7,7 +7,15 @@ Here is the link to this database:
 https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 
 ---
-## **This project was made by Aleksei Glebov (also known as Keysella) for DS 210 class at Boston University.**
+### **Table of content**  
+
+- [About Project](#about)
+- [Files and functions](#filesandfunctions)
+- [Reflection](#reflection)
+- [Credits](#credits)
+- [Final nots](#finalnotes)
+---
+## <a id="about">**This project was made by Aleksei Glebov (also known as Keysella) for DS 210 class at Boston University.**</a>
 
 - **What was done in this project?**  
     - Basic logic to construct the anime recommendation list for a concrete user.
@@ -21,7 +29,7 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
     - Theoretically, this program can be used on a website with dinamical databases of the existing anime and the user's profile. Program can be connected to a website so that it can borrow the new information about constantly updating anime ratings - it will always be able to suggest new anime to watch.
 
 ---
-### **The anime recommendator consists of 3 main coding parts that are located in *src* directory:**
+### <a id="filesandfunctions">**The anime recommendator consists of 3 main coding parts that are located in *src* directory:**</a>
 1. ***main.rs*** file - this is the main file of the program that will start the ***main()*** function which uses all of the other files **in order to construct the list of recommendations**.  
 At the beginning of the function we need to choose the profile's name - this is the user's name for whom this program will make a recommendation list. Next, the program gets all the information about this user - it uses code from the ***work_with_profile.rs*** file, which reads the ***profiles.csv*** database and finds the user's string, and then builds the vector of strings with all the information about a concrete user. After program got the full information about the user - it checks if the user even has a **favorite anime list**. If user does have one, then the program uses functions from ***work_with_anime.rs*** file to construct the recommendation list BASED ON which anime the user liked already. However, if user does not have a favorite anime list, then the program uses same ***work_with_anime.rs*** file to build the list of top five most popular anime in the community.  
 This file contains following functions:  
@@ -50,13 +58,13 @@ This file contains following functions:
     - ***mk_topfive()*** - this is the most important function that contains the logic to construct the recommendation list. This logic can be improved or changed in a way that is asked, but for now it builds the recommendation list based on the genres that user's favorite anime contain.
 
 ---
-### **Reflection**
+### <a id="reflection">**Reflection**</a>
 I enjoyed making this project come to live, and I really appreciate the opportunity that I was given.  
 I like this program, and I may update it in the future.  
 In my opinion, the logic that I built here is very simple, so I really want to improve it!
 
 ---
-### **Credits**
+### <a id="credits">**Credits**</a>
 While completing this project I used the following resources:
 - DS 210 lecture notes;
 - DS 210 Homeworks;
@@ -67,7 +75,7 @@ While completing this project I used the following resources:
 - youtube.com.
 
 ---
-### **Final notes**
+### <a id="finalnotes">**Final notes**</a>
 > There are two user's accounts on this project listed in "Contributors" section. I don't know how this happend, but my another account "Keysella" was added there. I think the problem was that I was pushing my files to github while working on my personal computer that has this account as the prior one.  
 Aleksei Glebov and "Keysella" is one person, I didn't cheat while working on this project, and I did everything by myself. I have other accounts on social media named Keysella that can prove my identity.  
 
