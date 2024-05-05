@@ -1,5 +1,5 @@
 # **The Anime Recommendator v1.0**
-![](/img/logo.png)
+![ANIME RECOMMENDATOR](/img/logo.png)
 Hi everyone!
 This is my personal anime recommendator program that constructs anime recommendation list, based on the anime database by KUMAR ARNAV on kaggle website!
 
@@ -9,9 +9,10 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 ---
 ## **This project was made by Aleksei Glebov (also known as Keysella) for DS 210 class at Boston University.**
 
-- **What was done?**  
+- **What was done in this project?**  
     - Basic logic to construct the anime recommendation list for a concrete user.
     - Program uses two databases and assumes that user with a provided name exists.
+    - Database ***animes.csv*** was changed and filtered in a way that suits my project.
 - **What can be improved in this project?**  
     - The recommendation logic can be improved in such a way:  
         - If we need to randomly select favorite genres.
@@ -66,5 +67,5 @@ While completing this project I used these resources:
 > There are two user's accounts on this project listed in "Contributors" section. I don't know how this happend, but my another account "Keysella" was added there. I think the problem was that I was pushing my files to github while working on my personal computer that has this account as the prior one.  
 Aleksei Glebov and "Keysella" is one person, I didn't cheat while working on this project, and I did everything by myself. I have other accounts on social media named Keysella that can prove my identity.  
 
-> I started working on this project on May 1, but I didn't commit anything on GitHub until May 5, 3 am when I saw on Gradescope that I must do that. The only evidence I have which concludes that I started this project not on the last day - is my Piazza post @461, where I asked if I can change my data files a little bit. I worked on this project for 5 days, and I have my full project proposal submitted on Gradescope that describes my project's details in a two-page document. Since I realized I need to show the commit history - I started the commit history from updating the README.md file, and if I have some time I will also improve my functions.  
+> I started working on this project on May 1, but I didn't commit anything on GitHub until May 5, 3 am when I saw on Gradescope that I must do that. The only evidence I have which concludes that I started this project not on the last day - is my Piazza post @461, where I asked if I can change my data files a little bit. I worked on this project for 5 days, and I have my full project proposal submitted on Gradescope that describes my project's details in a two-page document. Since I realized I need to show the commit history - I started the commit history from updating the ***README.md*** file, and if I have some time I will also improve my functions.  
 Because of that, please show mercy while grading my commit history!
