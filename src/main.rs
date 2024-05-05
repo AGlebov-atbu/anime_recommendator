@@ -184,4 +184,36 @@ mod tests {
         // (for the account we have a concrete order: [0]username, [1]gender, [2]birthday, [3]favoriteanime, [4]url).
         assert_eq!(profile, ["shadowsplat", "", "", "", "https://myanimelist.net/profile/shadowsplat"]);
     }
+
+    // This function tests the profile that has some favorite anime.
+    // In this case, we know all the information that we need, so we simply use our functions.
+    #[test]
+    fn test_full_profile() {
+        // File names for profiles.csv animes.csv.
+        let file_profiles = "databases/profiles.csv";
+        let file_anime = "databases/animes.csv";
+        // Fill the username.
+        let username = "Lucryllin";
+
+        // Get the profile.
+        let profile = work_with_profile::find_profile(file_profiles, username);
+
+        // Get favorite anime list.
+        let favorite_anime_list = work_with_profile::make_anime_id_list(profile);
+
+        // Construct the genres list and sort it in descending order.
+        let genre_list = work_with_anime::make_genres_list(&favorite_anime_list, file_anime);
+        let mut counted_genres = work_with_anime::genres_counter(&genre_list);
+        // Sort favorite genres by their appearance in the list in a descending order.
+        counted_genres.sort_by(|a, b| b.counter.cmp(&a.counter));
+
+        // Build a recommendation top for a user.
+        let topfive = work_with_anime::mk_topfive(&favorite_anime_list, &counted_genres, file_anime);
+
+        // Assert the recommendation top.
+        // In the main function you can uncomment lines of code that will allow you to see
+        // the favorite genres of a certain user and their appearances.
+        // With all of that, we know that this user should try watching (what we recommend this user to watch).
+        assert_eq!(topfive, ["Fullmetal Alchemist: Brotherhood", "Kimi no Na wa.", "Shingeki no Kyojin Season 3 Part 2", "Gintama°", "Gintama'"]);
+    }
 }
