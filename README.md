@@ -6,6 +6,7 @@ This is my personal anime recommendator program that constructs anime recommenda
 Here is the link to this database:
 https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 
+---
 ## **This project was made by Aleksei Glebov (also known as Keysella) for DS 210 class at Boston University.**
 
 - **What was done?**  
@@ -18,6 +19,7 @@ https://www.kaggle.com/datasets/arnavvvvv/anime-dataset/data
 - **What can this program be used for?**  
     - Theoretically, this program can be used on a website which will provide dinamical databases of the existing anime and the user's profile. If we work on that program, we can connect it so that it can borrow the new information and constantly updating anime ratings - so that it can always suggest new anime to watch.
 
+---
 ### **The anime recommendator consists of 3 main coding parts that are located in src directory:**
 1. ***main.rs*** file - this is the main file of the program that will start the ***main()*** function which uses all of the other files **in order to construct the list of recommendations**.  
 At the beginning of the function we need to choose the profile's name - this is the user's name for whom this program will make a recommendation list. Next, the program gets all the information about this user - it uses code from the ***work_with_profile.rs*** file, which reads the ***profiles.csv*** database and finds the user's string, and then builds the vector of strings with all the information about a concrete user. After program got the full information about the user - it checks if the user even has a **favorite anime list**. If user does have one, then the program uses functions from ***work_with_anime.rs*** file to construct the recommendation list BASED ON which anime the user liked already. However, if user does not have a favorite anime list, then the program uses same ***work_with_anime.rs*** file to build the list of top five most popular anime in the community.  
