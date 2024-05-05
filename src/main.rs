@@ -139,3 +139,28 @@ fn main() {
     println!("------------------------------------------------------------------------------------------------------------------------------------------------------------");
     println!("\n\n\n");
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // This function tests the recommendation list for the user with an empty profile.
+    // Since the profile is empty, we do not need it to build the recommendation list.
+    #[test]
+    fn test_empty_profile() {
+        // File name for anime.csv.
+        let file_anime = "databases/animes.csv";
+
+        // Find the regular top of anime.
+        let regular_topfive = work_with_anime::mk_topfive_from_nothing(file_anime);
+        
+        // Based on the database, the most popular anime right now are:
+        //      - Death Note
+        //      - Shingeki no Kyojin
+        //      - Sword Art Online
+        //      - Fullmetal Alchemist: Brotherhood
+        //      - One Punch Man
+        // This order is descending: from most popular to less popular.
+        assert_eq!(regular_topfive, ["Death Note", "Shingeki no Kyojin", "Sword Art Online", "Fullmetal Alchemist: Brotherhood", "One Punch Man"]);
+    }
+}
