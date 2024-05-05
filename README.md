@@ -1,5 +1,5 @@
 # **The Anime Recommendator v1.0**
-
+![](/img/logo.png)
 Hi everyone!
 This is my personal anime recommendator program that constructs anime recommendation list, based on the anime database by KUMAR ARNAV on kaggle website!
 
@@ -33,6 +33,6 @@ The ***work_with_profiles.rs*** file has the following functions:
         3. user's birthday;
         4. list of favorite anime (which contains anime ids);
         5. link to user's profile.
-    - 
+    - ***make_anime_id_list()*** - it simply takes the string of user's favorite anime ids and creates a vector of integers, where each integer represents the id of a certain anime. If the list is empty, it returns the empty vector.
 
 I started working on this project on May 1, but I didn't commit anything on GitHub (because I forgot to do that). The only evidence I have which concludes that I started this project not on the last day - is my Piazza post @461, where I asked if I can change my data files a little bit
